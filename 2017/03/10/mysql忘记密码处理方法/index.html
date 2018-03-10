@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://bundyli.github.io">
-  <title>Category: github pages | Bundyli的博客</title>
+  <title>mysql忘记密码的处理 | Bundyli的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bundyli的博客">
-<meta property="og:url" content="http://bundyli.github.io/categories/github-pages/index.html">
+  <meta name="description" content="mysql忘记了root的密码。在网上找了很久，终于找到修改root密码的方法并修改成功。1、 关闭正在运行的MySQL服务：控制面板 →管理工具→服务→MySQL56（本人安装版本为mysql_5.6.16_32_msi）2、打开DOS窗口，转到mysql→bin目录。（本人安装路径C:\MySQL\MySQL Server 5.6）3、输入mysqld –skip-grant-tables 回">
+<meta name="keywords" content="mysql密码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql忘记密码的处理">
+<meta property="og:url" content="http://bundyli.github.io/2017/03/10/mysql忘记密码处理方法/index.html">
 <meta property="og:site_name" content="Bundyli的博客">
-<meta property="og:description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
+<meta property="og:description" content="mysql忘记了root的密码。在网上找了很久，终于找到修改root密码的方法并修改成功。1、 关闭正在运行的MySQL服务：控制面板 →管理工具→服务→MySQL56（本人安装版本为mysql_5.6.16_32_msi）2、打开DOS窗口，转到mysql→bin目录。（本人安装路径C:\MySQL\MySQL Server 5.6）3、输入mysqld –skip-grant-tables 回">
+<meta property="og:updated_time" content="2018-03-10T10:42:12.235Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bundyli的博客">
-<meta name="twitter:description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
+<meta name="twitter:title" content="mysql忘记密码的处理">
+<meta name="twitter:description" content="mysql忘记了root的密码。在网上找了很久，终于找到修改root密码的方法并修改成功。1、 关闭正在运行的MySQL服务：控制面板 →管理工具→服务→MySQL56（本人安装版本为mysql_5.6.16_32_msi）2、打开DOS窗口，转到mysql→bin目录。（本人安装路径C:\MySQL\MySQL Server 5.6）3、输入mysqld –skip-grant-tables 回">
   
     <link rel="alternative" href="/atom.xml" title="Bundyli的博客" type="application/atom+xml">
   
@@ -139,71 +140,198 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-mysql忘记密码处理方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/03/07/GitHub-pages/" class="archive-article-date">
-  	<time datetime="2016-03-07T15:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/07/GitHub-pages/">github pages</a>
+    <h1 class="article-title" itemprop="name">
+      mysql忘记密码的处理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/03/10/mysql忘记密码处理方法/" class="archive-article-date">
+  	<time datetime="2017-03-10T09:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql忘记了root的密码。"><a href="#mysql忘记了root的密码。" class="headerlink" title="mysql忘记了root的密码。"></a>mysql忘记了root的密码。</h1><p>在网上找了很久，终于找到修改root密码的方法并修改成功。<br>1、 关闭正在运行的MySQL服务：控制面板 →管理工具→服务→MySQL56（本人安装版本为mysql_5.6.16_32_msi）<br>2、打开DOS窗口，转到mysql→bin目录。（本人安装路径C:\MySQL\MySQL Server 5.6）<br>3、输入mysqld –skip-grant-tables 回车。–skip-grant-tables 的意思是启动MySQL服务的时候跳过权限表认证。<br>4、再开一个DOS窗口（因为刚才那个DOS窗口已经不能动了），转到mysql-bin目录。<br><a id="more"></a><br>5、 输入mysql回车，如果成功，将出现MySQL提示符 &gt;。<br>6、连接权限数据库： use mysql; 。<br>7、改密码：update user set password=’123’ where user=”root”;（别忘了最后加分号）<br>8、刷新权限（必须步骤）：flush privileges;　。<br>9、退出 quit。<br>10、注销系统，再进入，使用用户名root和刚才设置的新密码123登录。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">github pages</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mysql密码</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/github-pages//" class="article-tag-list-link color3">github pages</a>
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://bundyli.github.io/2017/03/10/mysql忘记密码处理方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2016/05/10/css禁止滚动条/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">my-second-blog</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="mysql忘记密码处理方法" data-title="mysql忘记密码的处理" data-url="http://bundyli.github.io/2017/03/10/mysql忘记密码处理方法/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,10 +354,10 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
-		isCategory: true,
+		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
 		root: "/",
