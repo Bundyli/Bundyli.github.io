@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2016/5 | Bundyli的博客</title>
+  <title>git | Bundyli的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bundyli的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2016/05/index.html">
+  <meta name="description" content="Gitshell shell的介绍 在计算机科学中，shell俗称壳，用来区别kernel（核），是指“提供使用者使用界面”的软件，类似于dos下的command和后来的cmd.exe，它接收用户命令，会调用相应的应用程序。   shell的分类 shell分为图形界面shell和命令行shell。   bash（Bourne Again Shell）   bash命令格式：命令 [-option">
+<meta name="keywords" content="git github">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git">
+<meta property="og:url" content="http://yoursite.com/2017/07/21/git/index.html">
 <meta property="og:site_name" content="Bundyli的博客">
-<meta property="og:description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
+<meta property="og:description" content="Gitshell shell的介绍 在计算机科学中，shell俗称壳，用来区别kernel（核），是指“提供使用者使用界面”的软件，类似于dos下的command和后来的cmd.exe，它接收用户命令，会调用相应的应用程序。   shell的分类 shell分为图形界面shell和命令行shell。   bash（Bourne Again Shell）   bash命令格式：命令 [-option">
+<meta property="og:updated_time" content="2018-03-20T17:09:06.552Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bundyli的博客">
-<meta name="twitter:description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
+<meta name="twitter:title" content="git">
+<meta name="twitter:description" content="Gitshell shell的介绍 在计算机科学中，shell俗称壳，用来区别kernel（核），是指“提供使用者使用界面”的软件，类似于dos下的command和后来的cmd.exe，它接收用户命令，会调用相应的应用程序。   shell的分类 shell分为图形界面shell和命令行shell。   bash（Bourne Again Shell）   bash命令格式：命令 [-option">
   
     <link rel="alternative" href="/atom.xml" title="Bundyli的博客" type="application/atom+xml">
   
@@ -139,71 +140,374 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/05/10/css禁止滚动条/" class="archive-article-date">
-  	<time datetime="2016-05-10T09:05:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-05-10</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/05/10/css禁止滚动条/">css禁止滚动条</a>
+    <h1 class="article-title" itemprop="name">
+      git
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/07/21/git/" class="archive-article-date">
+  	<time datetime="2017-07-20T17:03:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h3 id="shell"><a href="#shell" class="headerlink" title="shell"></a>shell</h3><ol>
+<li>shell的介绍<blockquote>
+<p>在计算机科学中，shell俗称壳，用来区别kernel（核），是指“提供使用者使用界面”的软件，类似于dos下的command和后来的cmd.exe，它接收用户命令，会调用相应的应用程序。</p>
+</blockquote>
+</li>
+<li>shell的分类<blockquote>
+<p>shell分为图形界面shell和命令行shell。</p>
+</blockquote>
+</li>
+<li>bash（Bourne Again Shell）</li>
+</ol>
+<ul>
+<li>bash命令格式：<br>命令 [-options][参数]</li>
+<li>查看帮助： 命令 –help</li>
+<li>pwd (print working directory)查看当前目录</li>
+<li>cd (change directory) 切换目录</li>
+<li>ls (list)查看当前目录下的内容，如 ls 4 -code,ls -a, ls -l, ls -al.</li>
+<li>mkdir (make directory) 创建文件夹/目录</li>
+<li>touch 创建文件<a id="more"></a></li>
+<li>cat 查看文件的全部内容，如：cat index.html</li>
+<li>more/less 由于是模拟Linux下的sh,会有bug</li>
+<li>rm (remove) 删除文件</li>
+<li>rmdir(remove directory)删除目录，但是只能删除空目录</li>
+<li>rm -r 递归删除文件夹</li>
+<li>mv (move) 可以用来修改文件名字，或移动文件，如：mv base.js js</li>
+<li>cp (copy) 复制文件</li>
+<li>head 查看文件前几行，如：head -5 index.html</li>
+<li>tail 查看文件的后几行， 如：tail -6 index.html</li>
+<li>tab 自动补全，连续按两次会将左右匹配的内容显示出来</li>
+<li>history 查看操作历史</li>
+<li>ssh 远程登录，如：ssh <a href="mailto:root@gitlab.study.com" target="_blank" rel="noopener">root@gitlab.study.com</a></li>
+<li>>和&gt;&gt; ,重定向，&gt;覆盖，&gt;&gt;追加，如：echo hello &gt; index.html将输出的内容放在index.html文件中。</li>
+<li>wget 下载</li>
+<li>tar 解压缩，unzip</li>
+<li>curl 网络请求，如：curl <a href="http://www.baidu.com" target="_blank" rel="noopener">http://www.baidu.com</a></li>
+<li>whoami 查看当前用户</li>
+<li>| 管道符，可以将多个命令相连接使用。</li>
+<li>grep 匹配内容，和管道符一起使用，如：ls | grep s(将上个命令的执行结果作为)</li>
+</ul>
+<ol>
+<li>vi编辑器<blockquote>
+<p>linux下的标配，类似于Windows下的记事本</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>vi index.html 即可在hell bash窗口进行编辑。</li>
+<li>vi 编辑器提供了3种模式，命令行模式，插入模式，底行模式，每种模式所做的操作不同。</li>
+<li>底行模式命令<blockquote>
+<p>w (保存write)<br>q (退出 quit)<br>wq (保存并退出)<br>e! (撤销更改，返回到上次保存到的状态)<br>q! (不保存，强制退出去)<br>set nu(设置行号)</p>
+</blockquote>
+</li>
+<li><p>命令行模式</p>
+<blockquote>
+<p>ZZ(保存并退出)<br>u (撤销操作，可撤销多次)<br>dd (删除当前行)<br>yy (复制当前行)<br>p (粘贴内容)<br>ctrl + f (向前翻页)<br>ctrl + b (向后翻页)</p>
+</blockquote>
+<blockquote>
+<p>i (进行编辑模式,光标当前行，不动)<br>a (进入编辑模式，下一个字符)<br>A (进入编辑模式，行末)<br>o (进入编辑模式，新建下一行)<br>O (进入编辑模式，新建上一行)</p>
+</blockquote>
+</li>
+</ul>
+<ol>
+<li>SSH</li>
+</ol>
+<ul>
+<li>SSH是一种网络协议，用于计算机之间的加密登录。</li>
+<li>若在windows中的使用SSH，会用到软件putty,git客户也集成了SSH。</li>
+<li>格式：ssh user@host,user代表真实存在的用户，host代表要登录的远程计算机。</li>
+<li>常见的有两种加密技术：对称性加密（相同秘钥），非对称性加密（不同的公钥和私钥）。ssh属于非对称性加密。</li>
+<li>公钥和私钥<blockquote>
+<p>使用私钥加密数据，只能与其对应的公钥才能解密。<br>使用公钥加密数据，只能与其对应的私钥才能解密。</p>
+</blockquote>
+</li>
+<li>scp main.css  <a href="mailto:student@192.168.141.68" target="_blank" rel="noopener">student@192.168.141.68</a>:/home/student</li>
+</ul>
+<ol>
+<li>版本控制（version control system）<blockquote>
+<p>实现版本控制的软件有很多类，大致可分为本地版本控制系统，集中版本控制系统，分布式版本控制系统。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>本地版本控制系统，借助软件，帮助我们记录文件的每次修改，可以通过软件回到任意版本。功能比较单一，很难协同开发，少用。</li>
+<li>集中式版本控制系统，SVN代表，即在服务器端保存修改的不同版本，但若服务器出现故障，或网络状态不好，都会影响效率。</li>
+<li>分布式版本控制系统，Git，不需要中央服务器，每个人有不同的版本，都在本地，当然还有一台共享服务器。</li>
+</ul>
+<ol>
+<li>Git 安装，诞生于Linux系统，故使用bash命令。</li>
+<li>Git 工作原理</li>
+</ol>
+<ul>
+<li>git管理我们文件的3种状态，分别为：已提交(commit),已提交(modefied)，已暂存(staged)。</li>
+<li>Git项目的三个工作区域的概念：Git仓库，工作目录以及暂存区域。</li>
+<li>Git仓库：是Git用来保存项目的元数组，和对象数据库的地方。</li>
+<li>工作目录：是对该项目的某个版本独立提取出来的内容。</li>
+<li>暂存区：是一个文件，保存了下次将提交的文件列表信息。</li>
+</ul>
+<ol>
+<li>Git使用步骤：</li>
+</ol>
+<ul>
+<li>git init (出现.git目录)  工作区</li>
+<li>git add index.html  暂存区</li>
+<li>git commit -m ‘初始化仓库’  Git仓库</li>
+</ul>
+<ol>
+<li>配置用户信息</li>
+</ol>
+<ul>
+<li>git config –global user.name ‘Bundy’</li>
+<li>git config –global user.email <a href="mailto:&#39;bundylijuanjuan@163.com" target="_blank" rel="noopener">&#39;bundylijuanjuan@163.com</a>‘<blockquote>
+<p>在C:\user\administrator.gitconfig 会有用户信息</p>
+</blockquote>
+</li>
+<li>git config –list 查看配置信息</li>
+<li>git log 记录日志查看</li>
+</ul>
+<ol>
+<li>相关命令</li>
+</ol>
+<ul>
+<li>git status 查看当前仓库的状态</li>
+<li>git add -A/文件名/文件路径/*</li>
+<li>git checkout index.html 将暂存区还原到工作区的内容</li>
+<li>git commit -m ‘’ 将暂存区内容永久存储到仓库中（并且生成新的版本）</li>
+<li>git reset –hard 版本提交ID (回到不同的版本)</li>
+<li>git log 查看当前历史/存盘点/版本</li>
+</ul>
+<ol>
+<li>git 分支<blockquote>
+<p>多任务解决方案，一个模块一个分支，一个功能一个分支，不同的分支之间开发互相不影响。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>master 分支，至少commit一次，默认分支。</li>
+<li>git branch cart(分支名)   新建分支</li>
+<li>git branch  查看分支，当前在哪个分支，前面会有个*</li>
+<li>git checkout cart  切换分支</li>
+<li>git merge master(被合并的分支)   合并分支，冲突，会有解决冲突。</li>
+<li>git branch -d cart(要删除的分支)</li>
+<li>git branch -D cart  强制删除cart分支</li>
+<li>git checkout -b newbranch  创建并切换分支</li>
+</ul>
+<ol>
+<li>远程仓库<blockquote>
+<p>借助于共享仓库，实现（分支/版本）共享。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>git push 远程仓库的地址</li>
+<li>如何创建远程仓库？<blockquote>
+<p>创建XXX.git结尾的目录，<br>裸仓库  git init –bare</p>
+</blockquote>
+</li>
+<li>git push <a href="mailto:student@193.168.141.65" target="_blank" rel="noopener">student@193.168.141.65</a>:/home/student/itcast.git master</li>
+<li>git pull <a href="mailto:student@193.168.141.65" target="_blank" rel="noopener">student@193.168.141.65</a>:/home/student/itcast.git master  将服务器中的远程仓库拉下来。</li>
+<li>git remote add itcast <a href="mailto:student@193.168.141.65" target="_blank" rel="noopener">student@193.168.141.65</a>:/home/student/itcast.git   给远程仓库取别名</li>
+<li>git pull itcast master</li>
+<li>git remote show itcast   查看远程地址。</li>
+<li>git clone <a href="mailto:student@193.168.141.65" target="_blank" rel="noopener">student@193.168.141.65</a>:/home/student/itcast.git<br>克隆项目</li>
+<li>git clone 远程地址  相当于 mkdir目录 + cd目录下 + git init + git remote add origin <a href="mailto:student@193.168.141.65" target="_blank" rel="noopener">student@193.168.141.65</a>:/home/student/itcast.git</li>
+<li>git clone 远程地址 myproject (放到新建的myproject目录下)</li>
+</ul>
+<ol>
+<li>gitHub<blockquote>
+<p>基于git的管理远程仓库的服务器网站。</p>
+</blockquote>
+</li>
+</ol>
+<ul>
+<li>ssh -keygen -t rsa   (创建公钥和私钥，在C:\user\Administrator\id-ras.pub,将公钥粘贴到github–setting –SSHandGCNkey下，即可实现免密码登录)</li>
+</ul>
+<ol>
+<li>gitlab （与github类似，不过不仅仅是公共项目，还有部分是私有的免费的项目，可以用作项目管理）</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">前端，css滚动条</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git github</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
+        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/07/21/git/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/05/18/canvas小结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">canvas  2d小结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="git" data-title="git" data-url="http://yoursite.com/2017/07/21/git/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -226,8 +530,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
