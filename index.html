@@ -141,6 +141,500 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-angularJS小结5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/09/02/angularJS小结5/">angularJS小结5</a>
+    </h1>
+  
+
+        
+        <a href="/2017/09/02/angularJS小结5/" class="archive-article-date">
+  	<time datetime="2017-09-02T14:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="模块加载"><a href="#模块加载" class="headerlink" title="模块加载"></a>模块加载</h3><blockquote>
+<p>angularJS模块可以在被加载和执行之前对其进行配置，可以在应用的加载阶段配置不同的逻辑。</p>
+<ol>
+<li>配置快<br>通过config方法实现对模块的配置，angularJS中的服务大部分都对应一个provider，用来<br>执行与对应的服务相同的功能或对其进行配置。比如$log,$http,$location都是内置服务，<br>相应的provider分别为：$logProvider,$httpProvider,$locationProvider</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//config 允许一次性配置多个服务，传递的是一个数组，依赖注入的方式</span><br><span class="line">   App.config([&apos;$logProvider&apos;,&apos;$filterProvider&apos;,function($logProvider,$filterProvider)&#123;</span><br><span class="line">       //禁用debug</span><br><span class="line">       $logProvider.debugEnabled(false);</span><br><span class="line"></span><br><span class="line">       //新增一个过滤器</span><br><span class="line">       $filterProvider.register(&apos;capitalize&apos;,function()&#123;</span><br><span class="line">           return function(input)&#123;</span><br><span class="line">               return input[0].toUpperCase() + input.slice(1);</span><br><span class="line">           &#125;;</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">   &#125;]);</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/09/02/angularJS小结5/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/09/02/angularJS小结5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-angularJS小结4 " class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/30/angularJS小结4 /">angularJS小结4</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/30/angularJS小结4 /" class="archive-article-date">
+  	<time datetime="2017-08-30T13:10:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>$http(用于向服务器端发起异步请求)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    var App = angular.module(&apos;App&apos;,[]);</span><br><span class="line">    //$http用于向服务器端发起异步请求</span><br><span class="line">    App.controller(&apos;DemoController&apos;,[&apos;$scope&apos;,&apos;$http&apos;,&apos;$log&apos;,function($scope,$http,$log)&#123;</span><br><span class="line"></span><br><span class="line">        //$http本质是对XMLHttpRequest对象的封装</span><br><span class="line">//        var xhr = new XMLHttpRequest();</span><br><span class="line">        //打开一个链接</span><br><span class="line">//        xhr.open(&apos;get/post&apos;,&apos;example.php?name=itcast&apos;);</span><br><span class="line">//        xhr.setRequestHeader(&apos;Content-Type&apos;,&apos;application/x-www-form-urlencoded&apos;);</span><br><span class="line">//        xhr.send(&apos;name=小明&apos;);</span><br><span class="line"></span><br><span class="line">        $http(&#123;</span><br><span class="line">            url:&apos;example.php&apos;,</span><br><span class="line">            method:&apos;post&apos;,</span><br><span class="line">            headers:&#123;</span><br><span class="line">                &apos;Content-Type&apos;:&apos;application/x-www-form-urlencoded&apos;</span><br><span class="line">            &#125;,</span><br><span class="line">            //get参数</span><br><span class="line">            params: &#123;</span><br><span class="line">                name:&apos;itcast&apos;</span><br><span class="line">            &#125;,</span><br><span class="line">            //post参数</span><br><span class="line">            data: &apos;age=22&apos;</span><br><span class="line">        &#125;).success(function(info)&#123;</span><br><span class="line">            //info即返回的数据</span><br><span class="line">             $log.info(info);</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">    &#125;]);</span><br><span class="line"></span><br><span class="line">    //传递的数据可以是 key=val&amp;key=val形式，这种形式脚formData</span><br><span class="line">    //Content-Type 设成application/x-www-form-urlencoded</span><br><span class="line">    //当请求的数据类型不一样，后端在接收的时候才去的方式也不一样</span><br><span class="line">    //加入上述方式以php为例，可以使用$_POST接收</span><br><span class="line"></span><br><span class="line">    //application/json;charset=URF-8就是json对象形式</span><br><span class="line">    //Request Payload</span><br><span class="line">    //加入采用上述方式，以php为例，$_POST就不能接收了</span><br><span class="line"></span><br><span class="line">    //接口方式</span><br><span class="line">    //SOAP  RESTFUL</span><br><span class="line">    //angularJS 默认支持RESTFUL方式</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/08/30/angularJS小结4 /#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/30/angularJS小结4 /">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-angularJS小结3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/30/angularJS小结3/">angularJS小结3</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/30/angularJS小结3/" class="archive-article-date">
+  	<time datetime="2017-08-30T13:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="过滤器"><a href="#过滤器" class="headerlink" title="过滤器"></a>过滤器</h3><blockquote>
+<p>在AngularJS中使用过滤器，可以格式化展示数据，在 两个花括号 中使用 竖线 来调用过滤器，<br>使用 冒号 来传递参数。</p>
+<ol>
+<li>内置过滤器：</li>
+</ol>
+<ul>
+<li>currency(货币)</li>
+<li>date(日期)</li>
+<li>filter（对数组的过滤）</li>
+<li>json （将对象或转成json格式）</li>
+<li>limitTo(截取数组)</li>
+<li>uppercase(转为大写)</li>
+<li>lowercase(转为小写)</li>
+<li>number(转为数字)</li>
+<li>orderBy(数组排序，默认false升序)</li>
+</ul>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/08/30/angularJS小结3/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/30/angularJS小结3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-angularJS小结2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/30/angularJS小结2/">angularJS小结2</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/30/angularJS小结2/" class="archive-article-date">
+  	<time datetime="2017-08-30T13:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="数据绑定"><a href="#数据绑定" class="headerlink" title="数据绑定"></a>数据绑定</h3><blockquote>
+<p>数据绑定是将模型中的数据与相应的视图进行关联，分为单向绑定和双向绑定。</p>
+</blockquote>
+<ol>
+<li>单向绑定：将model数据放到view模板中，再追加到dom中。</li>
+<li>双向绑定</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body ng-app&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; ng-model=&quot;msg&quot;/&gt;</span><br><span class="line">&lt;h2&gt;&#123;&#123;msg&#125;&#125;&lt;/h2&gt;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>相关指令：</li>
+</ol>
+<ul>
+<li>ng-bind,</li>
+<li>ng-model,</li>
+<li>ng-click,</li>
+<li>ng-dbclick,</li>
+<li>ng-mouseleave,</li>
+<li>ng-repeat,</li>
+<li>ng-switch,</li>
+<li>ng-switch-when,</li>
+<li>ng-checked
+        
+          <a class="article-more-a" href="/2017/08/30/angularJS小结2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端 前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/30/angularJS小结2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-angularJS小结1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/29/angularJS小结1/">angularJS小结1</a>
+    </h1>
+  
+
+        
+        <a href="/2017/08/29/angularJS小结1/" class="archive-article-date">
+  	<time datetime="2017-08-29T04:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="angularJS"><a href="#angularJS" class="headerlink" title="angularJS"></a>angularJS</h1><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><blockquote>
+<p>是一款由GOOGLE公司开发维护的MVC框架。</p>
+</blockquote>
+<h3 id="类库和框架"><a href="#类库和框架" class="headerlink" title="类库和框架"></a>类库和框架</h3><blockquote>
+<p>类库：指的是一系列函数的集合，如jQuery，以dom作为核心驱动.<br>框架：指的是类库的集合，如angularJS，以数据和逻辑作为驱动。</p>
+</blockquote>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><ol>
+<li>官网下载</li>
+<li>npm install angular</li>
+<li>bower install angular</li>
+</ol>
+<h3 id="MVC开发模式"><a href="#MVC开发模式" class="headerlink" title="MVC开发模式"></a>MVC开发模式</h3><ol>
+<li>M(model),一般用来处理数据，操作数据库</li>
+<li>V(view)，一般用来显示数据，比如通过html来展示</li>
+<li>C(control)，一般用来连接model和view的
+        
+          <a class="article-more-a" href="/2017/08/29/angularJS小结1/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/29/angularJS小结1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-gulp" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -609,97 +1103,10 @@
 
 
   
-    <article id="post-GitHub-pages" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/07/GitHub-pages/">github pages</a>
-    </h1>
-  
-
-        
-        <a href="/2016/03/07/GitHub-pages/" class="archive-article-date">
-  	<time datetime="2016-03-07T15:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="github-pages"><a href="#github-pages" class="headerlink" title="github pages"></a>github pages</h1><p>使用github pages服务搭建博客的好处有：</p>
-<ol>
-<li>全是静态文件，访问速度快；</li>
-<li>免费方便，不用花一分钱就可以搭建一个自由的个人博客，不需要服务器不需要后台；</li>
-<li>可以随意绑定自己的域名，不仔细看的话根本看不出来你的网站是基于github的；
-        
-          <a class="article-more-a" href="/2016/03/07/GitHub-pages/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">github pages</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/github-pages//" class="article-tag-list-link color3">github pages</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/03/07/GitHub-pages/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -789,15 +1196,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">git github</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gulp 前端项目构建</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">前端，canvas 2d</a>
+                <a href="javascript:void(0)" class="js-tag color1">前端，前端MVC框架 angularJS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -805,7 +1204,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端，canvas 2d</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gulp 前端项目构建</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">mysql密码</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">git github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">前端 前端MVC框架 angularJS</a>
               </li>
             
             <div class="clearfix"></div>

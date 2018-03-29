@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Bundyli的博客</title>
+  <title>angularJS小结5 | Bundyli的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
-<meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer,Coder,Geek,html,css,css3,用户体验">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bundyli的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="模块加载 angularJS模块可以在被加载和执行之前对其进行配置，可以在应用的加载阶段配置不同的逻辑。  配置快通过config方法实现对模块的配置，angularJS中的服务大部分都对应一个provider，用来执行与对应的服务相同的功能或对其进行配置。比如$log,$http,$location都是内置服务，相应的provider分别为：$logProvider,$httpProvider,">
+<meta name="keywords" content="前端，前端MVC框架 angularJS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularJS小结5">
+<meta property="og:url" content="http://yoursite.com/2017/09/02/angularJS小结5/index.html">
 <meta property="og:site_name" content="Bundyli的博客">
-<meta property="og:description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
+<meta property="og:description" content="模块加载 angularJS模块可以在被加载和执行之前对其进行配置，可以在应用的加载阶段配置不同的逻辑。  配置快通过config方法实现对模块的配置，angularJS中的服务大部分都对应一个provider，用来执行与对应的服务相同的功能或对其进行配置。比如$log,$http,$location都是内置服务，相应的provider分别为：$logProvider,$httpProvider,">
+<meta property="og:updated_time" content="2018-03-29T05:03:59.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bundyli的博客">
-<meta name="twitter:description" content="擅长前端开发，专注于web开发，热爱视觉，前端爱好者">
+<meta name="twitter:title" content="angularJS小结5">
+<meta name="twitter:description" content="模块加载 angularJS模块可以在被加载和执行之前对其进行配置，可以在应用的加载阶段配置不同的逻辑。  配置快通过config方法实现对模块的配置，angularJS中的服务大部分都对应一个provider，用来执行与对应的服务相同的功能或对其进行配置。比如$log,$http,$location都是内置服务，相应的provider分别为：$logProvider,$httpProvider,">
   
     <link rel="alternative" href="/atom.xml" title="Bundyli的博客" type="application/atom+xml">
   
@@ -139,36 +140,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-angularJS小结5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      angularJS小结5
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/02/angularJS小结5/" class="archive-article-date">
+
+        
+        <a href="/2017/09/02/angularJS小结5/" class="archive-article-date">
   	<time datetime="2017-09-02T14:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-02</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/02/angularJS小结5/">angularJS小结5</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="模块加载"><a href="#模块加载" class="headerlink" title="模块加载"></a>模块加载</h3><blockquote>
+<p>angularJS模块可以在被加载和执行之前对其进行配置，可以在应用的加载阶段配置不同的逻辑。</p>
+<ol>
+<li>配置快<br>通过config方法实现对模块的配置，angularJS中的服务大部分都对应一个provider，用来<br>执行与对应的服务相同的功能或对其进行配置。比如$log,$http,$location都是内置服务，<br>相应的provider分别为：$logProvider,$httpProvider,$locationProvider</li>
+</ol>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//config 允许一次性配置多个服务，传递的是一个数组，依赖注入的方式</span><br><span class="line">   App.config([&apos;$logProvider&apos;,&apos;$filterProvider&apos;,function($logProvider,$filterProvider)&#123;</span><br><span class="line">       //禁用debug</span><br><span class="line">       $logProvider.debugEnabled(false);</span><br><span class="line"></span><br><span class="line">       //新增一个过滤器</span><br><span class="line">       $filterProvider.register(&apos;capitalize&apos;,function()&#123;</span><br><span class="line">           return function(input)&#123;</span><br><span class="line">               return input[0].toUpperCase() + input.slice(1);</span><br><span class="line">           &#125;;</span><br><span class="line">       &#125;);</span><br><span class="line"></span><br><span class="line">   &#125;]);</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ol>
+<li>运行块<blockquote>
+<p>服务也是以模块的形式存在的，且对外提供特定的功能，前边都是将服务作为依赖注入进去的，<br>除了这种方式以外，也可以直接运行相应的服务模块，angularJS提供了run方法来实现。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">App.run([&apos;$http&apos;,&apos;$rootScope&apos;,function($http,$rootScope)&#123;</span><br><span class="line">        //直接调用$http</span><br><span class="line">        $http(&#123;</span><br><span class="line">            url:&apos;example.php&apos;,</span><br><span class="line">            method: &apos;get&apos;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        //根作用域</span><br><span class="line">        $rootScope.name = &apos;mm&apos;;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><ol>
+<li>SPA（single page application）单页面应用<blockquote>
+<p>即把若干页面放到一个页面，数据dom动态获取（ajax）</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//监听锚点链接的变化然后发送请求</span><br><span class="line">//hashchange可以监听锚点的变化</span><br><span class="line">    window.addEventListener(&apos;hashchange&apos;,function()&#123;</span><br><span class="line">        //获取锚点</span><br><span class="line">        var hash = location.hash;</span><br><span class="line">        hash = hash.slice(1);</span><br><span class="line"></span><br><span class="line">        var xhr = new XMLHttpRequest();</span><br><span class="line">        //锚点作为参数传递给服务端</span><br><span class="line">        xhr.open(&apos;get&apos;,&apos;03-SPA.php?hash=&apos;+hash);</span><br><span class="line">        xhr.send(null);</span><br><span class="line">        xhr.onreadystatechange = function()&#123;</span><br><span class="line">            if(xhr.readyState == 4 &amp;&amp; xhr.status == 200)&#123;</span><br><span class="line">               var result = xhr.responseText;</span><br><span class="line">                //将返回的结果添加到页面上</span><br><span class="line">                document.querySelector(&apos;.content&apos;).innerHTML = result;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<ol>
+<li>路由（前端路由，链接锚点，使用angularJS-route.js）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;../libs/angular-route.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //依赖ngRoute模块</span><br><span class="line">    var App = angular.module(&apos;App&apos;,[&apos;ngRoute&apos;]);</span><br><span class="line"></span><br><span class="line">    //需要对路由模块进行配置，使其正常工作</span><br><span class="line">    App.config([&apos;$routeProvider&apos;,function($routeProvider)&#123;</span><br><span class="line"></span><br><span class="line">        $routeProvider.when(&apos;/index&apos;,&#123;</span><br><span class="line">            template:&apos;&lt;h1&gt;Index Page!&lt;/h1&gt;&apos;</span><br><span class="line">        &#125;).when(&apos;/introduce&apos;,&#123;</span><br><span class="line">            template:&apos;&lt;h1&gt;Introduce Page!&lt;/h1&gt;&apos;</span><br><span class="line">        &#125;).when(&apos;/contact&apos;,&#123;</span><br><span class="line">            template:&apos;&lt;h1&gt;Contact Us Page!&lt;/h1&gt;&apos;</span><br><span class="line">        &#125;).when(&apos;/list&apos;,&#123;</span><br><span class="line">            templateUrl: &apos;./list.html&apos;,</span><br><span class="line">            //定义控制器</span><br><span class="line">            controller: &apos;listController&apos;</span><br><span class="line">        &#125;).otherwise(&#123;</span><br><span class="line">            redirectTo:&apos;/index&apos;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;]);</span><br><span class="line"></span><br><span class="line">    App.controller(&apos;listController&apos;,[&apos;$scope&apos;,function($scope)&#123;</span><br><span class="line">        $scope.items = [&apos;images&apos;,&apos;css&apos;,&apos;js&apos;];</span><br><span class="line">    &#125;]);</span><br><span class="line"></span><br><span class="line">     //获取参数，在控制器中注入$routeParams可以获取传递的参数</span><br><span class="line">     App.controller(&apos;listController&apos;,[&apos;$scope&apos;,&apos;$routeParams&apos;,function($scope,$routeParams)&#123;</span><br><span class="line">         $scope.items = [&apos;images&apos;,&apos;css&apos;,&apos;js&apos;];</span><br><span class="line">         console.log($routeParams);</span><br><span class="line">     &#125;]);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="内置简化版的jQuery"><a href="#内置简化版的jQuery" class="headerlink" title="内置简化版的jQuery"></a>内置简化版的jQuery</h3><ol>
+<li>angular.element()可以将原生dom对象转化为jQuery对象。</li>
+<li>jqLite中只包含部分jQuery方法</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;../libs/angular.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    //angular.element()方法可以将一个原生的DOM对象转成jQuery对象</span><br><span class="line">    var box = document.querySelector(&apos;.box&apos;);</span><br><span class="line">    var btn = document.querySelector(&apos;button&apos;);</span><br><span class="line">    //转成jQuery对象</span><br><span class="line">    box = angular.element(box);</span><br><span class="line">    btn = angular.element(btn);</span><br><span class="line"></span><br><span class="line">    btn.on(&apos;click&apos;,function()&#123;</span><br><span class="line">        box.css(&apos;color&apos;,&apos;red&apos;);</span><br><span class="line">    &#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="bower"><a href="#bower" class="headerlink" title="bower"></a>bower</h3><blockquote>
+<p>是基于NodeJS的一个静态资源的管理工具，由Twitter公司开发维护，<br>解决大型网站中的静态资源的依赖问题。</p>
+<ol>
+<li>依赖NodeJS和git</li>
+<li>npm install -g bower (全局安装bower)</li>
+<li>bower search 查找资源信息</li>
+<li>bower install 要安装资源（可以通过#来指定版本）</li>
+<li>bower info 查看资源信息</li>
+<li>bower uninstall 卸载资源</li>
+<li>bower init 初始化，用来记录资源信息及依赖</li>
+</ol>
+</blockquote>
+<h3 id="父子控制器之间的传值"><a href="#父子控制器之间的传值" class="headerlink" title="父子控制器之间的传值"></a>父子控制器之间的传值</h3><ul>
+<li>$emit(‘事件名称’,’传递内容’);—&gt;事件发射器</li>
+<li>$broadcast(‘事件名称’,’传递内容’);—&gt;广播</li>
+<li>$scope.$emit(‘事件名称’,’传递内容’);</li>
+<li>$scope.$broadcast(‘事件名称’,’传递内容’);</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -180,7 +249,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -193,409 +262,124 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2017/09/02/angularJS小结5/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/30/angularJS小结4 /" class="archive-article-date">
-  	<time datetime="2017-08-30T13:10:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/30/angularJS小结4 /" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">angularJS小结4</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/30/angularJS小结4 /">angularJS小结4</a>
-    </h1>
-  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="angularJS小结5" data-title="angularJS小结5" data-url="http://yoursite.com/2017/09/02/angularJS小结5/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/30/angularJS小结3/" class="archive-article-date">
-  	<time datetime="2017-08-30T13:09:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/30/angularJS小结3/">angularJS小结3</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/30/angularJS小结2/" class="archive-article-date">
-  	<time datetime="2017-08-30T13:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/30/angularJS小结2/">angularJS小结2</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端 前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/29/angularJS小结1/" class="archive-article-date">
-  	<time datetime="2017-08-29T04:07:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/29/angularJS小结1/">angularJS小结1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">前端，前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端MVC框架-angularJS//" class="article-tag-list-link color3">前端MVC框架 angularJS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/27/gulp/" class="archive-article-date">
-  	<time datetime="2017-08-27T14:06:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/27/gulp/">gulp</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gulp 前端项目构建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/gulp//" class="article-tag-list-link color5">gulp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/21/git/" class="archive-article-date">
-  	<time datetime="2017-07-20T17:03:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/21/git/">git</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">git github</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/05/18/canvas小结/" class="archive-article-date">
-  	<time datetime="2017-05-18T14:37:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/05/18/canvas小结/">canvas  2d小结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端，canvas 2d</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/10/mysql忘记密码处理方法/" class="archive-article-date">
-  	<time datetime="2017-03-10T09:40:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/10/mysql忘记密码处理方法/">mysql忘记密码的处理</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mysql密码</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -618,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
